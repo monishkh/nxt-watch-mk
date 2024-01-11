@@ -68,7 +68,7 @@ export const FooterSection = styled.div`
   margin: 28px;
   margin-top: 50px;
 `
-export const SideNavHeading = styled.h1`
+export const SideNavHeading = styled.p`
   font-size: 22px;
   color: gray;
   line-height: 1;

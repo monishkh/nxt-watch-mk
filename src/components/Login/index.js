@@ -33,7 +33,7 @@ const Login = props => {
   // console.log(history)
 
   const cockieSet = jwtToken => {
-    Cookies.set('jwt_token', jwtToken)
+    Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
     console.log('yes')
   }
@@ -71,7 +71,7 @@ const Login = props => {
                       ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
                       : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
                   }
-                  alt="logo"
+                  alt="website logo"
                 />
                 <form onSubmit={handelSubmit}>
                   <div>

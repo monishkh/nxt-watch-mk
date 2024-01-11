@@ -62,11 +62,11 @@ const Home = () => {
     setApiStatus(apiConstantStatus.LOADING)
     const fetchData = async () => {
       const apiUrl = `https://apis.ccbp.in/videos/all?search=${searchInput}`
-      const Token = Cookies.get('jwt_token')
+      const jwt = Cookies.get('jwt_token')
       const option = {
         method: 'GET',
         headers: {
-          authorization: `barer ${Token}`,
+          authorization: `bearer ${jwt}`,
         },
       }
       const response = await fetch(apiUrl, option)
@@ -128,7 +128,7 @@ const Home = () => {
                     ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
                     : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
                 }
-                alt=""
+                alt="failure image"
               />
               <FailureHeading isThemeDark={isThemeDark}>
                 Oops! Something Went Wrong

@@ -71,7 +71,7 @@ export const LoginContainer = styled.div`
 export const LoginButton = styled.button`
   width: 300px;
   height: 50px;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   font-size: 20px;
   background-color: #3b82f6;

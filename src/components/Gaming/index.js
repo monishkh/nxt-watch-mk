@@ -48,7 +48,7 @@ const Gaming = () => {
       const option = {
         method: 'GET',
         headers: {
-          authorization: `barer ${jwt}`,
+          authorization: `bearer ${jwt}`,
         },
       }
 
@@ -95,7 +95,7 @@ const Gaming = () => {
                     ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
                     : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
                 }
-                alt=""
+                alt="failure image"
               />
               <FailureHeading isThemeDark={isThemeDark}>
                 Oops! Something Went Wrong
@@ -130,7 +130,7 @@ const Gaming = () => {
                       <GameListContainer>
                         <GameThumbnail
                           src={eachItem.thumbnailUrl}
-                          alt={eachItem.title}
+                          alt="video thumbnail"
                         />
                         <GameTitle isThemeDark={isThemeDark}>
                           {eachItem.title}

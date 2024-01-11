@@ -110,7 +110,7 @@ const SideNavbar = () => (
                 />
               </SocialBox>
               <FooterCaption>
-                Enjoy! Now to see your Channels and Recondition!
+                Enjoy! Now to see your channels and recommendations!
               </FooterCaption>
             </FooterSection>
           </SideNavContainer>

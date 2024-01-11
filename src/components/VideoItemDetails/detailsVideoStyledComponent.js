@@ -59,30 +59,25 @@ export const ViewContainer = styled.div`
   align-items: center;
 `
 
-export const LikeContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  padding: 10px;
+  width: 30%;
+`
+export const IconContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
 `
 
-export const VideosButton = styled.button`
-  background-color: transparent;
-  border: none;
-  color: #64748b;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+export const ParagraphBtn = styled.p`
   font-size: 20px;
-`
-
-export const ButtonParagraph = styled.p`
-  color: #64748b;
-  font-size: 16px;
-  line-height: 0;
   margin-left: 5px;
 `
+
 export const ChannelContainer = styled.div`
   display: flex;
   justify-content: flex-start;

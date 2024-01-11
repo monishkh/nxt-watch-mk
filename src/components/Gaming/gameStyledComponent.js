@@ -58,7 +58,7 @@ export const GameThumbnail = styled.img`
   }
 `
 
-export const GameTitle = styled.h1`
+export const GameTitle = styled.p`
   color: ${props => (props.isThemeDark ? 'white' : 'black')};
   font-size: 20px;
   @media screen and (min-width: 576px) {

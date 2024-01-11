@@ -58,3 +58,51 @@ export const NoVideoCaption = styled.p`
   text-align: center;
   font-weight: 400;
 `
+// saved videos list style here...
+
+export const SavedVideosUl = styled.ul`
+  padding: 0;
+  list-style-type: none;
+`
+
+export const SvList = styled.li`
+  margin: 10px;
+`
+export const ListContainer = styled.div`
+  padding: 10px;
+`
+
+export const SvThumbnail = styled.img`
+  width: 350px;
+  margin: 5px;
+  border-radius: 8px;
+`
+export const CannelBox = styled.div`
+  display: flex;
+`
+export const ChImg = styled.img`
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+`
+export const TBox = styled.div`
+  padding: 5px;
+`
+
+export const ChH = styled.h1`
+  color: ${props => (props.isThemeDark ? 'white' : 'black')};
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
+`
+export const ChDetail = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+export const Para = styled.p`
+  padding-top: 10px;
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+`

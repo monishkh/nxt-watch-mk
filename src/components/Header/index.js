@@ -36,10 +36,6 @@ import '../../utils/index.css'
 const Header = props => {
   const {history} = props
 
-  const backToHome = () => {
-    history.push('/')
-  }
-
   const logout = () => {
     Cookies.remove('jwt_token')
     history.replace('/login')
@@ -59,15 +55,17 @@ const Header = props => {
         return (
           <>
             <NavbarContainer isThemeDark={isThemeDark}>
-              <LogoImg
-                onClick={() => backToHome()}
-                src={
-                  isThemeDark
-                    ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
-                    : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
-                }
-                alt="nxt watch logo"
-              />
+              <Link to="/" style={{textDecoration: 'none'}}>
+                <LogoImg
+                  // onClick={() => backToHome()}
+                  src={
+                    isThemeDark
+                      ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
+                      : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
+                  }
+                  alt="nxt watch logo"
+                />
+              </Link>
 
               <MobileNavbar>
                 <MobileUlList>
@@ -190,7 +188,7 @@ const Header = props => {
                 </ThemeButton>
                 <UserImage
                   src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
-                  alt="profile"
+                  alt="profile image"
                 />
                 <Popup
                   modal
@@ -204,7 +202,7 @@ const Header = props => {
                     <>
                       <LogoutPopupContainer isThemeDark={isThemeDark}>
                         <LogoutText isThemeDark={isThemeDark}>
-                          Are you sure you want to logout?
+                          Are you sure, you want to logout
                         </LogoutText>
                         <PopupCancelButton onClick={() => close()}>
                           Cancel

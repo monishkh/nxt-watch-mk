@@ -1,4 +1,5 @@
 import {FaYoutube} from 'react-icons/fa'
+import {Link} from 'react-router-dom'
 
 import Header from '../Header'
 import SideNavbar from '../SideNavbar'
@@ -13,13 +14,27 @@ import {
   NoVideoImg,
   NoVideoHeading,
   NoVideoCaption,
+  SavedVideosUl,
+  SvList,
+  ListContainer,
+  SvThumbnail,
+  CannelBox,
+  ChImg,
+  TBox,
+  ChH,
+  ChDetail,
+  Para,
 } from './saveStyledComponent'
 
 const SavedVideos = () => (
   <NxtWatchContext.Consumer>
     {value => {
       const {isThemeDark, savedVideo} = value
-      console.log(savedVideo)
+
+      // savedVideo.map(e => console.log('m', e.videoDetails.channel.name))
+
+      const condition = savedVideo.length === 0
+      // console.log(condition)
 
       const renderNoSavedVideoView = () => (
         <>
@@ -38,6 +53,44 @@ const SavedVideos = () => (
         </>
       )
 
+      const renderSavedVideosListView = () => (
+        <>
+          <SavedVideosUl>
+            {savedVideo.map(eachItem => (
+              <SvList key={eachItem.videoDetails.id}>
+                <Link
+                  to={`/videos/${eachItem.videoDetails.id}`}
+                  style={{textDecoration: 'none', width: '100%'}}
+                >
+                  <ListContainer>
+                    <SvThumbnail
+                      src={eachItem.videoDetails.thumbnailUrl}
+                      alt="thumbnail image"
+                    />
+                    <CannelBox>
+                      <ChImg
+                        src={eachItem.videoDetails.channel.profileImageUrl}
+                        alt="channel logo"
+                      />
+                      <TBox>
+                        <ChH isThemeDark={isThemeDark}>
+                          {eachItem.videoDetails.title}
+                        </ChH>
+                        <ChDetail>
+                          <Para>{eachItem.videoDetails.channel.name}</Para>
+                          <Para>{eachItem.videoDetails.viewCount} views</Para>
+                          <Para>{eachItem.videoDetails.publishedAt}</Para>
+                        </ChDetail>
+                      </TBox>
+                    </CannelBox>
+                  </ListContainer>
+                </Link>
+              </SvList>
+            ))}
+          </SavedVideosUl>
+        </>
+      )
+
       return (
         <>
           <Header />
@@ -50,7 +103,9 @@ const SavedVideos = () => (
                 </SvBtn>
                 <SvHeading isThemeDark={isThemeDark}>Saved Videos</SvHeading>
               </SvTitleContainer>
-              {renderNoSavedVideoView()}
+              {condition
+                ? renderNoSavedVideoView()
+                : renderSavedVideosListView()}
             </SaveContainer>
           </SavePage>
         </>

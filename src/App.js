@@ -15,26 +15,19 @@ import ProtectedRoute from './components/ProtecterRoute'
 // Replace your code here
 const App = () => {
   const [isThemeDark, setIsThemeDark] = useState(false)
-  // const [isLikeVideo, setIsLikeVideo] = useState(false)
-  // const [isDisLikeVideo, setIsDisLikeVideo] = useState(false)
-  const [isSavedVideo, setIsSavedVideo] = useState(false)
-  const [savedVideo, setSavedVideo] = useState([])
   const [activeTab, setActiveTab] = useState('home')
+  const [savedVideo, setSavedVideo] = useState([])
 
   const getActiveTab = tab => {
     setActiveTab(tab)
   }
 
-  const saveVideo = () => {
-    setIsSavedVideo(prev => !prev)
+  const addSavedVideo = item => {
+    console.log('yes its work')
+    setSavedVideo([...savedVideo, item])
   }
 
-  const videoList = newVideo => {
-    console.log('m', newVideo)
-    setSavedVideo(prevState => [...prevState, newVideo])
-  }
-
-  //  console.log('sss', savedVideo)
+  console.log('sss', savedVideo)
 
   const changeTheme = () => {
     setIsThemeDark(prev => !prev)
@@ -45,12 +38,10 @@ const App = () => {
       value={{
         isThemeDark,
         activeTab,
-        getActiveTab,
-        isSavedVideo,
         savedVideo,
+        getActiveTab,
         changeTheme,
-        saveVideo,
-        videoList,
+        addSavedVideo,
       }}
     >
       <Switch>

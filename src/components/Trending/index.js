@@ -51,7 +51,7 @@ const Trending = () => {
       const option = {
         method: 'GET',
         headers: {
-          authorization: `barer ${jwt}`,
+          authorization: `bearer ${jwt}`,
         },
       }
       const response = await fetch(url, option)
@@ -105,12 +105,12 @@ const Trending = () => {
                     <TrendVideoContainer>
                       <TrendThumbnail
                         src={eachTrend.thumbnailUrl}
-                        alt={eachTrend.title}
+                        alt="thumbnail image"
                       />
                       <TrendVideoDetailContainer>
                         <ChannelImg
                           src={eachTrend.channel.profileImageUrl}
-                          alt={eachTrend.channel.name}
+                          alt="channel logo"
                         />
                         <TitleContainer>
                           <Title isThemeDark={isThemeDark}>
@@ -155,7 +155,7 @@ const Trending = () => {
                     ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
                     : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
                 }
-                alt=""
+                alt="failure image"
               />
               <FailureHeading isThemeDark={isThemeDark}>
                 Oops! Something Went Wrong
